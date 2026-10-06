@@ -1,10 +1,10 @@
 # Fundamentos Web - Frontend
 ## Estructura del proyecto
 - css: Contiene las hojas de estilo
-- images: Imagenes en formato jpg, png, webp (recomiendo)
+- images: Imágenes en formato jpg, png, *webp (recomienda)*
 - js: Archivos Javascript
-- test: Pruevas qye se realizan **pero no se publican**
-- vendor: Compponentes desarrollados por externos
+- test: Pruebas que se realizan **pero no se publican**
+- vendor: Componentes desarrollados por externos
 ## Tecnologías a utilizar
 - HTML
 - CSS
@@ -14,4 +14,4 @@
 2. Abre una terminal en tu computador y escribe:
 3. Ingresa a VSCode y agrega la carpeta del proyecto
 
-visita mi web [ishume](https://www.ishume.com)
+Visita mi Web: [Google](https://www.google.com.pe)

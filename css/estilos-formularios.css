@@ -1,0 +1,417 @@
+/* =========================================================
+   FORMULARIOS — Flat Elegant UI
+   ========================================================= */
+
+:root {
+    --form-bg: #ffffff;
+    --form-surface: #f8fafc;
+    --form-border: #d8dee8;
+    --form-border-hover: #b8c2d1;
+
+    --form-text: #172033;
+    --form-muted: #697386;
+    --form-placeholder: #9aa4b2;
+
+    --form-primary: #2563eb;
+    --form-primary-hover: #1d4ed8;
+    --form-primary-soft: rgba(37, 99, 235, 0.12);
+
+    --form-success: #16a34a;
+    --form-danger: #dc2626;
+
+    --form-radius: 8px;
+    --form-height: 44px;
+
+    --form-transition: 160ms ease;
+}
+
+/* ---------------------------------------------------------
+   CONTENEDOR
+   --------------------------------------------------------- */
+
+.form {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+
+    color: var(--form-text);
+    background: var(--form-bg);
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+/* ---------------------------------------------------------
+   GRUPOS
+   --------------------------------------------------------- */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 18px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+/* ---------------------------------------------------------
+   LABEL
+   --------------------------------------------------------- */
+
+.form-label {
+    color: var(--form-text);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.form-label .required {
+    margin-left: 3px;
+    color: var(--form-danger);
+}
+
+/* ---------------------------------------------------------
+   INPUT / SELECT
+   --------------------------------------------------------- */
+
+.form-control {
+    width: 100%;
+    height: var(--form-height);
+    box-sizing: border-box;
+
+    padding: 0 13px;
+
+    color: var(--form-text);
+    background: var(--form-bg);
+
+    border: 1px solid var(--form-border);
+    border-radius: var(--form-radius);
+
+    outline: none;
+
+    font: inherit;
+    font-size: 0.925rem;
+
+    transition:
+        border-color var(--form-transition),
+        box-shadow var(--form-transition),
+        background-color var(--form-transition);
+}
+
+/* Placeholder */
+
+.form-control::placeholder {
+    color: var(--form-placeholder);
+}
+
+/* Hover */
+
+.form-control:hover {
+    border-color: var(--form-border-hover);
+}
+
+/* ---------------------------------------------------------
+   FOCO — ESTADO PRINCIPAL PARA TECLADO / ENTER
+   --------------------------------------------------------- */
+
+/*
+ * :focus-visible permite mostrar el énfasis principalmente
+ * cuando el usuario navega mediante teclado.
+ */
+.form-control:focus-visible {
+    border-color: var(--form-primary);
+
+    box-shadow:
+        0 0 0 3px var(--form-primary-soft);
+
+    background-color: #fff;
+}
+
+/*
+ * Mantiene visible el control activo incluso cuando el
+ * navegador utiliza :focus en lugar de :focus-visible.
+ */
+.form-control:focus {
+    border-color: var(--form-primary);
+}
+
+/* ---------------------------------------------------------
+   SELECT
+   --------------------------------------------------------- */
+
+.form-select {
+    appearance: none;
+    cursor: pointer;
+
+    padding-right: 40px;
+
+    background-image:
+        linear-gradient(45deg, transparent 50%, #64748b 50%),
+        linear-gradient(135deg, #64748b 50%, transparent 50%);
+    background-position:
+        calc(100% - 17px) 19px,
+        calc(100% - 12px) 19px;
+    background-size:
+        5px 5px,
+        5px 5px;
+    background-repeat: no-repeat;
+}
+
+.form-select:focus-visible {
+    background-image:
+        linear-gradient(45deg, transparent 50%, var(--form-primary) 50%),
+        linear-gradient(135deg, var(--form-primary) 50%, transparent 50%);
+}
+
+/* ---------------------------------------------------------
+   TEXTAREA
+   --------------------------------------------------------- */
+
+textarea.form-control {
+    min-height: 110px;
+    height: auto;
+
+    padding-top: 11px;
+    padding-bottom: 11px;
+
+    resize: vertical;
+}
+
+/* ---------------------------------------------------------
+   ESTADOS DE VALIDACIÓN
+   --------------------------------------------------------- */
+
+.form-control.is-valid {
+    border-color: var(--form-success);
+}
+
+.form-control.is-invalid {
+    border-color: var(--form-danger);
+}
+
+.form-control.is-invalid:focus-visible {
+    box-shadow:
+        0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.form-error {
+    color: var(--form-danger);
+    font-size: 0.78rem;
+    line-height: 1.4;
+}
+
+.form-help {
+    color: var(--form-muted);
+    font-size: 0.78rem;
+    line-height: 1.4;
+}
+
+/* ---------------------------------------------------------
+   BOTONES
+   --------------------------------------------------------- */
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+.btn {
+    min-height: var(--form-height);
+    padding: 0 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: 1px solid transparent;
+    border-radius: var(--form-radius);
+
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition:
+        background-color var(--form-transition),
+        border-color var(--form-transition),
+        color var(--form-transition),
+        box-shadow var(--form-transition),
+        transform var(--form-transition);
+}
+
+/* Botón primario */
+
+.btn-primary {
+    color: #fff;
+    background: var(--form-primary);
+}
+
+.btn-primary:hover {
+    background: var(--form-primary-hover);
+}
+
+/* Botón secundario */
+
+.btn-secondary {
+    color: var(--form-text);
+    background: #fff;
+    border-color: var(--form-border);
+}
+
+.btn-secondary:hover {
+    background: var(--form-surface);
+    border-color: var(--form-border-hover);
+}
+
+/* ---------------------------------------------------------
+   FOCO DE BOTONES
+   --------------------------------------------------------- */
+
+/*
+ * El foco del botón utiliza el mismo lenguaje visual
+ * que los campos.
+ */
+.btn:focus-visible {
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px var(--form-primary-soft);
+}
+
+/*
+ * Efecto muy sutil al activar mediante teclado/mouse.
+ */
+.btn:active {
+    transform: translateY(1px);
+}
+
+/* ---------------------------------------------------------
+   BOTÓN DESHABILITADO
+   --------------------------------------------------------- */
+
+.btn:disabled,
+.form-control:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* ---------------------------------------------------------
+   CHECKBOX / RADIO
+   --------------------------------------------------------- */
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--form-text);
+    font-size: 0.875rem;
+}
+
+.form-check input {
+    width: 17px;
+    height: 17px;
+    margin: 0;
+
+    accent-color: var(--form-primary);
+
+    cursor: pointer;
+}
+
+.form-check input:focus-visible {
+    outline: 3px solid var(--form-primary-soft);
+    outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------
+   INDICADOR OPCIONAL DEL CONTROL ACTIVO
+   --------------------------------------------------------- */
+
+/*
+ * Si se desea un indicador todavía más evidente del control
+ * que recibirá la acción de teclado:
+ */
+
+.form-keyboard-active:focus-visible {
+    border-color: var(--form-primary);
+
+    box-shadow:
+        0 0 0 3px var(--form-primary-soft),
+        inset 3px 0 0 var(--form-primary);
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE — TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 640px) {
+
+    .form {
+        padding: 18px 16px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE — MÓVIL
+   --------------------------------------------------------- */
+
+@media (max-width: 420px) {
+
+    .form {
+        padding: 14px 12px;
+    }
+
+    .form-control {
+        height: 46px;
+        font-size: 1rem;
+    }
+
+    .btn {
+        min-height: 46px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ---------------------------------------------------------
+   ACCESIBILIDAD — REDUCIR ANIMACIONES
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .form-control,
+    .btn {
+        transition: none;
+    }
+}
